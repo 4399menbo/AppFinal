@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 public class page2 extends AppCompatActivity {
 
+
+
     private static TextView R_title;
     private static TextView R_shop;
     private static TextView R_menu;
@@ -25,6 +27,7 @@ public class page2 extends AppCompatActivity {
     static String str;
     static String str1;
     static String str2;
+    static boolean Rsmenu=false;
 
 
 
@@ -213,9 +216,11 @@ public class page2 extends AppCompatActivity {
         if(FoodInfo.length>2){
             R_smenu.setText(FoodInfo[2]+"");
             R_smenu.setVisibility(View.VISIBLE); //顯示
+            Rsmenu=true;
         }
         else {
             R_smenu.setVisibility(View.GONE); // 隱藏
+            Rsmenu=false;
         }
     }
 
@@ -272,7 +277,7 @@ public class page2 extends AppCompatActivity {
             str=R_title.getText().toString();
             str1=R_shop.getText().toString();
             str2=R_menu.getText().toString();
-            if(R_smenu !=null){
+            if(Rsmenu){
                 str2=str2+R_smenu.getText().toString();
             }
             return str+" "+str1+" "+str2;
