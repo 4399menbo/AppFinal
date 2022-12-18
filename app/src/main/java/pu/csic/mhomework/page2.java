@@ -28,11 +28,13 @@ public class page2 extends AppCompatActivity {
     static String str1;
     static String str2;
     static boolean Rsmenu=false;
+    static  int mode=0;
 
 
 
     private Button R_run;
     private Button backHome;
+    private TextView R_hint;
 
     ImageView image;
 
@@ -53,6 +55,7 @@ public class page2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
 
+
         //获得布局
         RelativeLayout relativeLayout = findViewById(R.id.animat2);
         //从布局中获得背景
@@ -60,11 +63,15 @@ public class page2 extends AppCompatActivity {
 
         R_title = (TextView)findViewById(R.id.house);
 
+
         R_shop = (TextView)findViewById(R.id.shop);
 
         R_menu = (TextView) findViewById(R.id.info);
 
         R_smenu = (TextView) findViewById(R.id.sinfo);
+
+        R_hint  =(TextView)findViewById(R.id.hint);
+        R_hint.setSelected(true);
 
         R_run = (Button) findViewById(R.id.Run1);
 
@@ -158,6 +165,7 @@ public class page2 extends AppCompatActivity {
 
     private void SelectShop(String str){
 
+        mode=1;
         //資料導入
         ArrayList<String> sites = new ArrayList<String>();
         sites.clear();
@@ -272,15 +280,22 @@ public class page2 extends AppCompatActivity {
  */
 
 
+
     public static class Returnselect{
+        public static int MODE(){
+            return mode;
+        }
+
         public static String h1() {
             str=R_title.getText().toString();
             str1=R_shop.getText().toString();
             str2=R_menu.getText().toString();
+            mode=0;
             if(Rsmenu){
                 str2=str2+R_smenu.getText().toString();
             }
             return str+" "+str1+" "+str2;
         }
+
     }
 }

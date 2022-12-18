@@ -26,7 +26,8 @@
                 android:id="@+id/start"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="START" />
+                android:text="START"
+                android:background="@drawable/custom_button"/>
 
 
             <Button
@@ -34,7 +35,8 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:text="Admin"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:background="@drawable/custom_button"/>
         </LinearLayout>
     </LinearLayout>
 

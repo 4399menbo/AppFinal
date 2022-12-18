@@ -69,7 +69,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="結束導航"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:background="@drawable/custom_button"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

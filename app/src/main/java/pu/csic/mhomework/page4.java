@@ -27,14 +27,18 @@ import java.util.Iterator;
 
 public class page4 extends AppCompatActivity {
 
-    private  TextView house;
-    private  TextView shop;
-    private  TextView info;
+    private  static TextView house;
+    private  static TextView shop;
+    private  static TextView info;
+    static String str;
+    static String str1;
+    static String str2;
 
     private Button s4Back;
     private  Button s3Start;
     private Button run;
     private  Button HomeBtn;
+    private TextView R_hint2;
 
     private ScrollView screen4;
     private ScrollView screen5;
@@ -44,10 +48,19 @@ public class page4 extends AppCompatActivity {
 
     //private int counter=0;
 
+    private static  int mode=0;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page4);
+
+
+
+        R_hint2=findViewById(R.id.HINT);
+        R_hint2.setSelected(true);
 
         //aniImage = (ImageView)findViewById(R.id.F_aniImage);
 
@@ -119,10 +132,11 @@ public class page4 extends AppCompatActivity {
     }
 
     private void readF() {
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("");
 
-
+        mode=1;
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -247,4 +261,21 @@ public class page4 extends AppCompatActivity {
     }
 
      */
-}
+
+
+    public static class Returnselect{
+        public static int MODE(){
+            return mode;
+        }
+
+        public static String h1() {
+            str=house.getText().toString();
+            str1=shop.getText().toString();
+            str2=info.getText().toString();
+            mode=0;
+            return str+" "+str1+" "+str2;
+            }
+
+        }
+
+    }
