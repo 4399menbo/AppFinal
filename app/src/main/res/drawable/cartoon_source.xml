@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/eag1" android:duration="50"/>
+    <item android:drawable="@drawable/eag2" android:duration="50"/>
+    <item android:drawable="@drawable/eag3" android:duration="50"/>
+    <item android:drawable="@drawable/eag4" android:duration="50"/>
+    <item android:drawable="@drawable/eag5" android:duration="50"/>
+    <item android:drawable="@drawable/eag6" android:duration="50"/>
+    <item android:drawable="@drawable/eag7" android:duration="50"/>
+    <item android:drawable="@drawable/eag8" android:duration="50"/>
+    <item android:drawable="@drawable/eag9" android:duration="50"/>
+    <item android:drawable="@drawable/eag10" android:duration="50"/>
+    <item android:drawable="@drawable/eag11" android:duration="50"/>
+    <item android:drawable="@drawable/eag12" android:duration="50"/>
+    <item android:drawable="@drawable/eag13" android:duration="50"/>
+    <item android:drawable="@drawable/eag14" android:duration="50"/>
+    <item android:drawable="@drawable/eag15" android:duration="50"/>
+    <item android:drawable="@drawable/eag16" android:duration="50"/>
+    <item android:drawable="@drawable/eag17" android:duration="50"/>
+    <item android:drawable="@drawable/eag18" android:duration="50"/>
+    <item android:drawable="@drawable/eag19" android:duration="50"/>
+    <item android:drawable="@drawable/eag20" android:duration="50"/>
+    <item android:drawable="@drawable/eag21" android:duration="50"/>
+    <item android:drawable="@drawable/eag22" android:duration="50"/>
+    <item android:drawable="@drawable/eag23" android:duration="50"/>
+    <item android:drawable="@drawable/eag24" android:duration="50"/>
+    <item android:drawable="@drawable/eag25" android:duration="50"/>
+    <item android:drawable="@drawable/eag26" android:duration="50"/>
+</animation-list>

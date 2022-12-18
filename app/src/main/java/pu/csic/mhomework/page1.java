@@ -23,5 +23,15 @@ public class page1 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button next2PageBtn = (Button)findViewById(R.id.admin);
+        next2PageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(page1.this , page4.class);
+                startActivity(intent);
+            }
+        });
     }
 }

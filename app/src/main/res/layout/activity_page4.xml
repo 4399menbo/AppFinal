@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".page2">
+    android:background="@color/primary"
+    tools:context=".page4">
 
     <ScrollView
-        android:id="@+id/screen_2"
+        android:id="@+id/screen_5"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:background="@color/primary"
@@ -27,24 +28,8 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingTop="10dp"
-                android:visibility="visible">
-
-                <ImageView
-                    android:id="@+id/product_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    tools:srcCompat="@tools:sample/avatars" />
-            </LinearLayout>
-
             <TextView
-                android:id="@+id/house"
+                android:id="@+id/F_house"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Hello World!"
@@ -52,7 +37,7 @@
                 android:textSize="40sp" />
 
             <TextView
-                android:id="@+id/shop"
+                android:id="@+id/F_shop"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Hello World!"
@@ -60,20 +45,12 @@
                 android:textSize="34sp" />
 
             <TextView
-                android:id="@+id/info"
+                android:id="@+id/F_info"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Hello World!"
                 android:textColor="#000000"
                 android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/sinfo"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="#535353"
-                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,7 +61,7 @@
                 android:visibility="visible">
 
                 <ImageView
-                    android:id="@+id/location"
+                    android:id="@+id/F_location"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/white"
@@ -100,7 +77,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <Button
-                    android:id="@+id/s2BACK"
+                    android:id="@+id/F_s4BACK"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -108,7 +85,7 @@
                     android:textAlignment="viewStart" />
 
                 <Button
-                    android:id="@+id/startmap"
+                    android:id="@+id/F_startmap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -118,8 +95,10 @@
 
         </LinearLayout>
     </ScrollView>
+
+
     <ScrollView
-        android:id="@+id/screen_1"
+        android:id="@+id/screen_4"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:background="@color/primary"
@@ -141,7 +120,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -150,20 +128,22 @@
                 android:textSize="20dp" />
 
             <RelativeLayout
-                android:id="@+id/animat2"
+                android:id="@+id/animat"
                 android:layout_width="320dp"
                 android:layout_height="480dp"
                 android:background="@drawable/cartoon_source" />
 
+
+
             <Button
-                android:id="@+id/Run1"
+                android:id="@+id/F_Run1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="RUN"
                 android:textSize="48sp" />
 
             <Button
-                android:id="@+id/BackHome"
+                android:id="@+id/F_BackHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Back"

@@ -3,11 +3,12 @@ package pu.csic.mhomework;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -26,8 +27,8 @@ public class page2 extends AppCompatActivity {
 
     ImageView image;
 
-    private int counter=0;
-    private  ImageView aniImage;
+    //private int counter=0;
+    //private  ImageView aniImage;
 
     private ScrollView screen1;
     private ScrollView screen2;
@@ -35,6 +36,7 @@ public class page2 extends AppCompatActivity {
     private Button S2Back;
     private Button S3start;
 
+    AnimationDrawable anim;
 
 
     @Override
@@ -42,6 +44,10 @@ public class page2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
 
+        //获得布局
+        RelativeLayout relativeLayout = findViewById(R.id.animat2);
+        //从布局中获得背景
+        anim = (AnimationDrawable)relativeLayout.getBackground();
 
         R_title = (TextView)findViewById(R.id.house);
 
@@ -55,7 +61,7 @@ public class page2 extends AppCompatActivity {
 
         image = (ImageView)findViewById(R.id.product_location) ;
 
-        aniImage = (ImageView)findViewById(R.id.aniImage) ;
+        //aniImage = (ImageView)findViewById(R.id.aniImage) ;
 
         screen1 = (ScrollView)findViewById(R.id.screen_1);
         screen2 = (ScrollView)findViewById(R.id.screen_2);
@@ -95,9 +101,10 @@ public class page2 extends AppCompatActivity {
 
 
     private  void ceImage(){
-        String uri = "@drawable/eag1" ; //圖片路徑和名稱
-        int imageResource = getResources().getIdentifier(uri, null, getPackageName()); //取得圖片Resource位子
-        aniImage.setImageResource(imageResource);
+        anim.stop();
+        //String uri = "@drawable/eag1" ; //圖片路徑和名稱
+        //int imageResource = getResources().getIdentifier(uri, null, getPackageName()); //取得圖片Resource位子
+        //aniImage.setImageResource(imageResource);
     }
     private void  clickGo(){
         R_run.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +117,7 @@ public class page2 extends AppCompatActivity {
                 //動畫
                 MyThread t1 = new MyThread();
                 t1.start();
+                anim.start();
 
 
                 //抽到的大樓
@@ -212,11 +220,11 @@ public class page2 extends AppCompatActivity {
         @Override
         public void run(){
             for (int i=0;i<26;i++){
-                counter ++;
+                //counter ++;
 
-                UpdateRun(counter);
+                //UpdateRun(counter);
                 try {
-                    Thread.sleep(90);
+                    Thread.sleep(50);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -232,11 +240,11 @@ public class page2 extends AppCompatActivity {
                 screen1.setVisibility(View.INVISIBLE); // 隱藏
                 R_run.setVisibility(View.VISIBLE); //顯示
                 screen2.setVisibility(View.VISIBLE);
-                counter = 0;
+                //counter = 0;
             }
         });
     }
-
+/*
     private void UpdateRun(final int counter) {
         runOnUiThread(new Runnable() {
             @Override
@@ -250,4 +258,5 @@ public class page2 extends AppCompatActivity {
         });
     }
 
+ */
 }
