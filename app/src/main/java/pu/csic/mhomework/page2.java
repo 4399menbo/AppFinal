@@ -18,10 +18,16 @@ import java.util.ArrayList;
 
 public class page2 extends AppCompatActivity {
 
-    private TextView R_title;
-    private TextView R_shop;
-    private TextView R_menu;
-    private TextView R_smenu;
+    private static TextView R_title;
+    private static TextView R_shop;
+    private static TextView R_menu;
+    private static TextView R_smenu;
+    static String str;
+    static String str1;
+    static String str2;
+
+
+
     private Button R_run;
     private Button backHome;
 
@@ -259,4 +265,17 @@ public class page2 extends AppCompatActivity {
     }
 
  */
+
+
+    public static class Returnselect{
+        public static String h1() {
+            str=R_title.getText().toString();
+            str1=R_shop.getText().toString();
+            str2=R_menu.getText().toString();
+            if(R_smenu !=null){
+                str2=str2+R_smenu.getText().toString();
+            }
+            return str+" "+str1+" "+str2;
+        }
+    }
 }
