@@ -27,24 +27,37 @@
 
         />
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias=".376" />
+
+
+
     <Button
         android:id="@+id/start"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/custom_button"
         android:text="START"
-        tools:ignore="DuplicateClickableBoundsCheck" />
+        tools:ignore="DuplicateClickableBoundsCheck"
+        android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/admin"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/custom_button"
         android:text="START"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:layout_marginBottom="30dp"/>
 
 </RelativeLayout>
