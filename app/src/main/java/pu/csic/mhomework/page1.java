@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class page1 extends AppCompatActivity {
 
@@ -58,12 +59,14 @@ public class page1 extends AppCompatActivity {
               if(ChangeMode.isChecked()){
                   nextPageBtn.setVisibility(View.INVISIBLE);
                   next2PageBtn.setVisibility(View.VISIBLE);
+                  Toast.makeText(getApplicationContext(), "1",Toast.LENGTH_LONG).show();
                   Log.d("test","1");
               }
               else {
                   nextPageBtn.setVisibility(View.VISIBLE);
                   next2PageBtn.setVisibility(View.INVISIBLE);
 
+                  Toast.makeText(getApplicationContext(), "0",Toast.LENGTH_LONG).show();
                   Log.d("test","0");
               }
             }
