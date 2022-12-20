@@ -50,6 +50,9 @@ public class page4 extends AppCompatActivity {
 
     private static  int mode=0;
 
+    private double loc_x = 0;
+    private double loc_y = 0;
+
 
 
     @Override
@@ -111,6 +114,12 @@ public class page4 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(page4.this , page3.class);
+
+                double[] RoomAndName = {loc_x,loc_y};
+                Bundle objbundle = new Bundle();
+                objbundle.putDoubleArray("pnumber",RoomAndName);
+                intent.putExtras(objbundle);
+
                 startActivity(intent);
                 finish();
             }
@@ -161,6 +170,9 @@ public class page4 extends AppCompatActivity {
                     if(i==random){
                         house.setText(item.child("pos").getValue(String.class));
                         shop.setText(item.child("Name").getValue(String.class));
+
+                        loc_x = item.child("x").getValue(Double.class);
+                        loc_y = item.child("y").getValue(Double.class);
                         readInFo(item.getKey());
                     }
                     i++;

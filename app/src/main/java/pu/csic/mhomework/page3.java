@@ -15,6 +15,10 @@ public class page3 extends AppCompatActivity {
     private int page4mode;
 
 
+    private double loc_x;//x位置
+    private double loc_y;//y位置
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +26,16 @@ public class page3 extends AppCompatActivity {
         page4mode=0;
         setContentView(R.layout.activity_page3);
 
+        //獲取座標
+        Bundle objgetbundle = this.getIntent().getExtras();
+        double[] array = objgetbundle.getDoubleArray("pnumber");
+        loc_x = array[0];
+        loc_y = array[1];
+        //
+
         Button Endmap=findViewById(R.id.endmap);
 
-       R_title1=findViewById(R.id.textView2);
+        R_title1=findViewById(R.id.textView2);
         R_title1.setSelected(true);
 
         Endmap.setOnClickListener(new View.OnClickListener() {
@@ -42,14 +53,11 @@ public class page3 extends AppCompatActivity {
             String i;
             i = page2.Returnselect.h1();
             R_title1.setText(""+i);
-
-
         }
         else if(page4mode==1){
             String i;
             i = page4.Returnselect.h1();
             R_title1.setText(""+i);
-
         }
 
     }

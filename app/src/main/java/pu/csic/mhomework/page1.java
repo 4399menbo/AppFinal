@@ -107,9 +107,5 @@ public class page1 extends AppCompatActivity {
 
         viewPager2.getChildAt(0).setOverScrollMode(View.OVER_SCROLL_NEVER);
 
-
-
-
-
     }
 }

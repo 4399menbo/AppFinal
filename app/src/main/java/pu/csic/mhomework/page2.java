@@ -49,6 +49,9 @@ public class page2 extends AppCompatActivity {
 
     AnimationDrawable anim;
 
+    private double loc_x = 0;
+    private double loc_y = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +111,12 @@ public class page2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(page2.this , page3.class);
+
+                double[] RoomAndName = {loc_x,loc_y};
+                Bundle objbundle = new Bundle();
+                objbundle.putDoubleArray("pnumber",RoomAndName);
+                intent.putExtras(objbundle);
+
                 startActivity(intent);
                 finish();
             }
@@ -216,7 +225,8 @@ public class page2 extends AppCompatActivity {
         String[] title= sites.get(0).trim().split(" ");
 
         R_title.setText(title[0]);
-
+        loc_x = Double.valueOf(title[1]);
+        loc_y = Double.valueOf(title[2]);
 
         R_shop.setText(ImageEnglish[0]);
 
