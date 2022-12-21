@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +26,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Iterator;
 
 public class page4 extends AppCompatActivity {
@@ -53,6 +61,8 @@ public class page4 extends AppCompatActivity {
     private double loc_x = 0;
     private double loc_y = 0;
 
+    private ImageView img_product;
+
 
 
     @Override
@@ -73,6 +83,22 @@ public class page4 extends AppCompatActivity {
 
         screen4 = (ScrollView)findViewById(R.id.screen_4);
         screen5 = (ScrollView)findViewById(R.id.screen_5);
+        //獲取網路圖片
+        StrictMode
+                .setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectDiskReads().
+                detectDiskWrites().
+                detectNetwork().
+                penaltyLog().
+                build());
+        StrictMode
+                .setVmPolicy(new StrictMode.VmPolicy.Builder()
+                        .detectLeakedSqlLiteObjects()
+                        .detectLeakedClosableObjects()
+                        .penaltyLog()
+                        .penaltyDeath()
+                        .build());
+        img_product = (ImageView)findViewById(R.id.F_product_location);
 
         //获得布局
         RelativeLayout relativeLayout = findViewById(R.id.animat);
@@ -126,11 +152,22 @@ public class page4 extends AppCompatActivity {
         });
     }
 
+    public void getReImage(String bitmapURL){
+        try {
+            URL myUrl = new URL(bitmapURL);
+            URLConnection myConn = myUrl.openConnection();
+            InputStream in = myConn.getInputStream();
+            Bitmap bmp = BitmapFactory.decodeStream(in);
+            img_product.setImageBitmap(bmp);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private  void ceImage(){
         anim.stop();
-        //String uri = "@drawable/eag1" ; //圖片路徑和名稱
-        //int imageResource = getResources().getIdentifier(uri, null, getPackageName()); //取得圖片Resource位子
-        //aniImage.setImageResource(imageResource);
     }
 
     private void F_GO(){
@@ -171,6 +208,8 @@ public class page4 extends AppCompatActivity {
                         house.setText(item.child("pos").getValue(String.class));
                         shop.setText(item.child("Name").getValue(String.class));
 
+                        getReImage(item.child("Image_").getValue(String.class));
+
                         loc_x = item.child("x").getValue(Double.class);
                         loc_y = item.child("y").getValue(Double.class);
                         readInFo(item.getKey());
@@ -191,8 +230,6 @@ public class page4 extends AppCompatActivity {
     private void readInFo(String menu) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(menu).child("menu");
-
-
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -258,21 +295,7 @@ public class page4 extends AppCompatActivity {
             }
         });
     }
-    /*
-    private void UpdateRun(final int counter) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                String uri = "@drawable/eag"+counter ; //圖片路徑和名稱
 
-                int imageResource = getResources().getIdentifier(uri, null, getPackageName()); //取得圖片Resource位子
-                aniImage.setImageResource(imageResource);
-
-            }
-        });
-    }
-
-     */
 
 
     public static class Returnselect{

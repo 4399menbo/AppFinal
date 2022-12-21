@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -33,8 +34,9 @@ public class page3 extends AppCompatActivity {
         loc_y = array[1];
         //
 
-        Button Endmap=findViewById(R.id.endmap);
 
+        Button Endmap=findViewById(R.id.endmap);
+        
         R_title1=findViewById(R.id.textView2);
         R_title1.setSelected(true);
 
