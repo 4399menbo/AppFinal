@@ -61,14 +61,15 @@
             android:orientation="vertical"
             android:paddingTop="30dp">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageView2"
                 android:layout_width="fill_parent"
                 android:layout_height="450dp"
                 android:background="@color/white"
-                tools:srcCompat="@tools:sample/avatars"
                 android:scaleType="fitXY"
-                android:src="@drawable/map_1"/>
+                android:src="@drawable/googlemap"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/googlemap" />
         </LinearLayout>
 
         <LinearLayout

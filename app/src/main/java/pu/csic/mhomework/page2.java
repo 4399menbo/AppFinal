@@ -253,7 +253,7 @@ public class page2 extends AppCompatActivity {
 
                 //UpdateRun(counter);
                 try {
-                    Thread.sleep(50);
+                    Thread.sleep(95);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

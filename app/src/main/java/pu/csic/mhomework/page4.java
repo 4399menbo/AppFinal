@@ -275,7 +275,7 @@ public class page4 extends AppCompatActivity {
 
                 //UpdateRun(counter);
                 try {
-                    Thread.sleep(50);
+                    Thread.sleep(95);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

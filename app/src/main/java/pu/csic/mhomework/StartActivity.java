@@ -28,8 +28,9 @@ public class StartActivity extends AppCompatActivity {
 
     private void start() {
         MyAsyncTask task =new MyAsyncTask(this);
-        task.execute(10);
+        task.execute(5);
         intent=new Intent(StartActivity.this,page1.class);
+
     }
 
 
@@ -60,12 +61,13 @@ public class StartActivity extends AppCompatActivity {
             for(int i=0; i< integers[0]; i++){
                 publishProgress((i*100)/integers[0]);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             startActivity(intent);
+            finish();
             return "Finish!";
 
         }
